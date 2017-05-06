@@ -2,9 +2,9 @@
 
 namespace LiveWriter
 {
-    public partial class LiveWriterPage : ContentPage
+    public partial class LandingPage : ContentPage
     {
-        public LiveWriterPage()
+        public LandingPage()
         {
             InitializeComponent();
         }
