@@ -8,7 +8,7 @@ namespace LiveWriter
         {
             InitializeComponent();
 
-            MainPage = new LiveWriterPage();
+            MainPage = new LandingPage();
         }
 
         protected override void OnStart()

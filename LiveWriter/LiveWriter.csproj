@@ -29,14 +29,14 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
-    <EmbeddedResource Include="LiveWriterPage.xaml" />
+    <EmbeddedResource Include="LandingPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LiveWriterPage.xaml.cs">
-      <DependentUpon>LiveWriterPage.xaml</DependentUpon>
+    <Compile Include="LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
