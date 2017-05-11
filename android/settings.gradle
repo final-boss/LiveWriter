@@ -1,0 +1,3 @@
+rootProject.name = 'LiveWriter'
+
+include ':app'
