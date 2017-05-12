@@ -1,7 +1,7 @@
 import 'react-native';
 import 'jest';
 import React from 'react';
-import Landing from './landing';
+import Landing from './index';
 
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
