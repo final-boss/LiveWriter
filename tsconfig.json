@@ -23,6 +23,7 @@
   "types": [
     "react",
     "react-native",
+    "react-navigation",
     "jest"
   ],
   "exclude": [

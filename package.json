@@ -18,12 +18,14 @@
     "pubnub": "^4.8.0",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
-    "react-native-svg": "^5.1.8"
+    "react-native-svg": "^5.1.8",
+    "react-navigation": "^1.0.0-beta.9"
   },
   "devDependencies": {
     "@types/jest": "^19.2.3",
     "@types/react": "^15.0.24",
     "@types/react-native": "^0.44.0",
+    "@types/react-navigation": "^1.0.0",
     "babel-jest": "20.0.0",
     "babel-preset-react-native": "1.9.1",
     "concurrently": "^3.4.0",
@@ -35,7 +37,7 @@
   },
   "jest": {
     "preset": "react-native",
-    "testRegex": "tscache/spec/.+\\.(test|spec).js$",
+    "testRegex": "tscache/.+\\.(test|spec).js$",
     "coverageDirectory": "coverage",
     "coverageReporters": [
       "text-summary",
@@ -43,7 +45,7 @@
     ],
     "collectCoverageFrom": [
       "tscache/**/*.js",
-      "!tscache/spec/**/*.spec.js",
+      "!tscache/**/*.spec.js",
       "!tscache/**/*.index.js"
     ]
   }
