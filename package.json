@@ -37,7 +37,7 @@
   },
   "jest": {
     "preset": "react-native",
-    "testRegex": "tscache/spec/.+\\.(test|spec).js$",
+    "testRegex": "tscache/.+\\.(test|spec).js$",
     "coverageDirectory": "coverage",
     "coverageReporters": [
       "text-summary",
@@ -45,7 +45,7 @@
     ],
     "collectCoverageFrom": [
       "tscache/**/*.js",
-      "!tscache/spec/**/*.spec.js",
+      "!tscache/**/*.spec.js",
       "!tscache/**/*.index.js"
     ]
   }
