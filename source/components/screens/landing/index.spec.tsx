@@ -1,14 +1,29 @@
 import 'react-native';
 import 'jest';
-import React from 'react';
-import Landing from './index';
+import React         from 'react';
+import LandingScreen from './index';
+import renderer      from 'react-test-renderer';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+describe(LandingScreen.name, () => {
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <Landing />
-  );
-  expect(tree).toBeDefined()
+  describe('render', () => {
+
+    const screen = renderer.create(
+      <LandingScreen />
+    );
+
+    it('renders correctly', () => {
+      expect(screen).toBeDefined()
+    });
+  });
+
+  describe('.navigationOptions', () => {
+
+    const navigationOptions = LandingScreen.navigationOptions;
+
+    it('does not have a header', () => {
+      expect(navigationOptions.header).toBeNull()
+    });
+  });
+
 });
