@@ -1,8 +1,11 @@
 import 'react-native';
 import 'jest';
+
 import React        from 'react';
 import CanvasScreen from './index';
 import renderer     from 'react-test-renderer';
+
+jest.mock('react-native-svg');
 
 describe(CanvasScreen.name, () => {
 
