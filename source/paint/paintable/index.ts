@@ -9,10 +9,10 @@ abstract class Paintable {
   static keyCounter : number = 0;
   static keyError   : string = 'Paint Element already rendered!';
 
-  constructor(points = []) {
-    this.points     = points;
-    this.offset     = new Point(0, 0);
-    this.final      = false;
+  constructor(points = [], offset = Point.default()) {
+    this.points = points;
+    this.offset = offset;
+    this.final  = false;
   }
 
   addPoint(event : any) {
@@ -22,7 +22,9 @@ abstract class Paintable {
   }
 
   offsetPoints() : Point[] {
-    return this.points.map((point) => point.offset(this.offset));
+    return this.points.map(
+      (point) => point.offset(this.offset)
+    );
   }
 
   key() : number {
