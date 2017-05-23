@@ -16,7 +16,7 @@ class PathPaintable extends Paintable {
   }
 
   copy() : PathPaintable {
-    return new PathPaintable(this.points);
+    return new PathPaintable(this.points, this.offset);
   }
 
   toElement() {
