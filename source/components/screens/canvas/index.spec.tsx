@@ -1,15 +1,17 @@
 import 'react-native';
 import 'jest';
-import React         from 'react';
-import LandingScreen from './index';
-import renderer      from 'react-test-renderer';
+import React        from 'react';
+import CanvasScreen from './index';
+import renderer     from 'react-test-renderer';
 
-describe(LandingScreen.name, () => {
+jest.mock('react-native-svg');
+
+describe(CanvasScreen.name, () => {
 
   describe('render', () => {
 
     const screen = renderer.create(
-      <LandingScreen />
+      <CanvasScreen />
     );
 
     it('renders correctly', () => {
@@ -19,7 +21,7 @@ describe(LandingScreen.name, () => {
 
   describe('.navigationOptions', () => {
 
-    const navigationOptions = LandingScreen.navigationOptions;
+    const navigationOptions = CanvasScreen.navigationOptions;
 
     it('does not have a header', () => {
       expect(navigationOptions.header).toBeNull()

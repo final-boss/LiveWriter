@@ -21,6 +21,10 @@ const styles: any = StyleSheet.create({
 
 export default class LandingScreen extends React.Component<Props, State> {
 
+  static navigationOptions : any = {
+    header: null
+  }
+
   render() {
     return (
       <View style={styles.container}>
