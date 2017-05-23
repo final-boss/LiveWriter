@@ -15,6 +15,14 @@ class Point {
       event.nativeEvent.pageX, event.nativeEvent.pageY
     );
   }
+
+  static origin() : Point {
+    return new Point(0, 0);
+  }
+
+  static default() : Point {
+    return this.origin();
+  }
 }
 
 export default Point;
