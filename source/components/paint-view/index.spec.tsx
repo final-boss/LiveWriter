@@ -1,7 +1,6 @@
 import 'react-native';
 import 'react-native-svg';
 import 'jest';
-
 import React     from 'react';
 import PaintView from './index';
 import renderer  from 'react-test-renderer';

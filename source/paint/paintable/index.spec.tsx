@@ -1,5 +1,4 @@
 import 'react-native';
-import 'react-native-svg';
 import 'jest';
 import Paintable from './';
 import Point     from '../point';
