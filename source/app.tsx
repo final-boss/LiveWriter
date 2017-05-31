@@ -1,8 +1,10 @@
 import { StackNavigator, NavigationContainer } from 'react-navigation';
-import LandingScreen from './components/screens/landing';
-import CanvasScreen  from './components/screens/canvas';
+import LandingScreen   from './components/screens/landing';
+import NewCanvasScreen from './components/screens/new-canvas';
+import CanvasScreen    from './components/screens/canvas';
 
 export const App : NavigationContainer = StackNavigator({
-  Landing : { screen : LandingScreen },
-  Canvas  : { screen : CanvasScreen }
+  Landing   : { screen : LandingScreen },
+  NewCanvas : { screen : NewCanvasScreen },
+  Canvas    : { screen : CanvasScreen }
 });
