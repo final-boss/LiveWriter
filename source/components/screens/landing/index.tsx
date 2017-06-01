@@ -1,7 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { NavigationScreenProp } from 'react-navigation';
 import React from 'react';
 
-export interface Props { }
+export interface Props {
+  navigation : NavigationScreenProp<State, any>
+}
 export interface State { }
 
 const styles: any = StyleSheet.create({
@@ -26,11 +29,16 @@ export default class LandingScreen extends React.Component<Props, State> {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
           LiveWriter
         </Text>
+        <View>
+          <Button title='New Canvas'
+                  onPress={() => navigate('NewCanvas')} />
+        </View>
       </View>
     );
   }

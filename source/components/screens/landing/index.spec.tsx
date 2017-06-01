@@ -4,12 +4,16 @@ import React         from 'react';
 import LandingScreen from './index';
 import renderer      from 'react-test-renderer';
 
+const navigation : any = {
+  navigate: () => { return }
+}
+
 describe(LandingScreen.name, () => {
 
   describe('render', () => {
 
     const screen = renderer.create(
-      <LandingScreen />
+      <LandingScreen navigation={navigation} />
     );
 
     it('renders correctly', () => {
