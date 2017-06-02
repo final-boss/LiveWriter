@@ -1,43 +1,30 @@
 import {
-  StyleSheet,
-  View,
-  Button,
-  TextInput,
-  Switch
-} from 'react-native';
-import { NavigationScreenProp } from 'react-navigation';
-import React                    from 'react';
+  Container, Button, Text, Form, Content,
+  Label, CheckBox, Header, Body, Item, Input
+} from 'native-base';
+import { Actions } from 'react-native-router-flux';
+import React from 'react';
 
-export interface Props {
-  navigation : NavigationScreenProp<State, any>
-}
+export interface Props { }
 export interface State {
   name   : string
   isOpen : boolean
 }
 
-const styles: any = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center'
-  },
-  nameInput: {
-    height: 64,
-    borderWidth: 0.5,
-    borderColor: '#333',
-    backgroundColor: '#FFF',
-    fontSize: 24,
-    padding: 10,
+const styles : any = {
+  content: {
     margin: 10
+  },
+  button: {
+    marginTop: 10
+  },
+  checkbox: {
+    marginTop: 10,
+    marginBottom: 10
   }
-});
+};
 
 export default class NewCanvasScreen extends React.Component<Props, State> {
-
-  static navigationOptions : any = {
-    title: 'New Canvas'
-  }
 
   constructor(props, context) {
     super(props, context);
@@ -48,16 +35,29 @@ export default class NewCanvasScreen extends React.Component<Props, State> {
   }
 
   render() {
-    const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
-        <TextInput autoCapitalize='none'
-                   style={styles.nameInput}
-                   value={this.state.name} />
-        <Switch style={styles.isOpenInput} />
-        <Button title='Create'
-                onPress={() => navigate('Canvas') } />
-      </View>
+      <Container>
+        <Header>
+          <Body><Text>New Canvas</Text></Body>
+        </Header>
+        <Content style={styles.content}>
+          <Form>
+            <Item inlineLabel>
+              <Label>Name</Label>
+              <Input />
+            </Item>
+            <Item inlineLabel>
+              <Label>Open?</Label>
+              <CheckBox checked={true} style={styles.checkbox} />
+            </Item>
+            <Button block
+                    onPress={() => Actions['canvas']() }
+                    style={styles.button}>
+              <Text>Create</Text>
+            </Button>
+          </Form>
+        </Content>
+      </Container>
     );
   }
 }
