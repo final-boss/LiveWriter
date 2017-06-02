@@ -39,6 +39,12 @@
   "jest": {
     "preset": "react-native",
     "testRegex": "tscache/.+\\.(test|spec).js$",
+    "transformIgnorePatterns": [
+      "./node_modules/(?!native-base)/"
+    ],
+    "setupFiles": [
+      "./tscache/spec/support/index.js"
+    ],
     "coverageDirectory": "coverage",
     "coverageReporters": [
       "text-summary",
