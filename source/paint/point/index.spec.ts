@@ -9,14 +9,26 @@ describe(Point.name, () => {
     subject = new Point(0, 0);
   });
 
-  describe('.fromReactEvent', () => {
+  describe('.fromReactPageEvent', () => {
 
     let [x, y]     = [10, 82],
         eventPoint = new Point(x, y),
         event      = { nativeEvent: { pageX: x, pageY: y } };
 
     it('should return point from event', () => {
-      let point = Point.fromReactEvent(event);
+      let point = Point.fromReactPageEvent(event);
+      expect(point).toEqual(eventPoint);
+    });
+  });
+
+  describe('.fromReactLayoutEvent', () => {
+
+    let [x, y]     = [10, 82],
+        eventPoint = new Point(x, y),
+        event      = { nativeEvent: { layout: { x: x, y: y } } };
+
+    it('should return point from event', () => {
+      let point = Point.fromReactLayoutEvent(event);
       expect(point).toEqual(eventPoint);
     });
   });
@@ -70,6 +82,22 @@ describe(Point.name, () => {
 
     it('should return point as string', () => {
       expect(subject.toString()).toEqual(str);
+    });
+  });
+
+  describe('#copy', () => {
+
+    let [x, y] = [79, 23];
+
+    beforeAll(() => {
+      subject.x = x;
+      subject.y = y;
+    });
+
+    it('should return new point', () => {
+      let copy = subject.copy();
+      expect(copy).toEqual(subject);
+      expect(copy).not.toBe(subject);
     });
   });
 

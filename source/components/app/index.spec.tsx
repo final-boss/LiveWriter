@@ -1,16 +1,16 @@
 import 'react-native';
 import 'react-native-svg';
 import 'jest';
-import React     from 'react';
-import PaintView from './index';
-import renderer  from 'react-test-renderer';
+import React    from 'react';
+import App      from './index';
+import renderer from 'react-test-renderer';
 
-describe(PaintView.name, () => {
+describe(App.name, () => {
 
   describe('render', () => {
 
     const component = renderer.create(
-      <PaintView />
+      <App />
     );
 
     it('renders correctly', () => {

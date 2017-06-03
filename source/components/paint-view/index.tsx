@@ -54,7 +54,7 @@ export default class PaintView extends React.Component<Props, State> {
   onPaint(event) {
     const paintable = this.state.paintable.copy();
     paintable.points.push(
-      Point.fromReactEvent(event)
+      Point.fromReactPageEvent(event)
     );
     this.setState({ paintable: paintable });
   }
@@ -71,9 +71,17 @@ export default class PaintView extends React.Component<Props, State> {
     });
   }
 
+  onLayout(event) {
+    Paintable.globalOffset =
+      Point.fromReactLayoutEvent(event);
+    this.state.paintable.resetOffset();
+  }
+
   render() {
     return (
-      <View {...this.responder.panHandlers} style={styles.container}>
+      <View {...this.responder.panHandlers}
+            onLayout={this.onLayout.bind(this)}
+            style={styles.container}>
         <Svg style={styles.surface}>
           <G>
             {this.state.paintable.toElement()}
