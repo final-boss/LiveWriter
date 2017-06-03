@@ -54,7 +54,7 @@ export default class PaintView extends React.Component<Props, State> {
   onPaint(event) {
     const paintable = this.state.paintable.copy();
     paintable.points.push(
-      Point.fromReactEvent(event)
+      Point.fromReactPageEvent(event)
     );
     this.setState({ paintable: paintable });
   }

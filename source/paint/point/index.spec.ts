@@ -9,14 +9,14 @@ describe(Point.name, () => {
     subject = new Point(0, 0);
   });
 
-  describe('.fromReactEvent', () => {
+  describe('.fromReactPageEvent', () => {
 
     let [x, y]     = [10, 82],
         eventPoint = new Point(x, y),
         event      = { nativeEvent: { pageX: x, pageY: y } };
 
     it('should return point from event', () => {
-      let point = Point.fromReactEvent(event);
+      let point = Point.fromReactPageEvent(event);
       expect(point).toEqual(eventPoint);
     });
   });
