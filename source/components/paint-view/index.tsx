@@ -72,8 +72,8 @@ export default class PaintView extends React.Component<Props, State> {
   }
 
   onLayout(event) {
-    let { x, y } = event.nativeEvent.layout;
-    Paintable.globalOffset = new Point(x, y);
+    Paintable.globalOffset =
+      Point.fromReactLayoutEvent(event);
     this.state.paintable.resetOffset();
   }
 
