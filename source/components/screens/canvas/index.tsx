@@ -20,8 +20,13 @@ export default class CanvasScreen extends React.Component<Props, State> {
       <Container>
         <Header>
           <Left>
+            <Button transparent>
+              <Icon name='arrow-back' />
+            </Button>
           </Left>
-          <Body><Text>Canvas</Text></Body>
+          <Body>
+            <Text>Canvas</Text>
+          </Body>
           <Right>
             <Button transparent>
               <Icon name='menu' />
