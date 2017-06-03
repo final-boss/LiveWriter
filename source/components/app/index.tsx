@@ -14,7 +14,7 @@ export default class App extends React.Component<Props, State> {
         <Scene key='root' hideNavBar={true}>
           <Scene key='landing'   component={Landing} />
           <Scene key='newCanvas' component={NewCanvas} />
-          <Scene key='canvas'    component={Canvas} />
+          <Scene key='canvas'    component={Canvas} panHandlers={null} />
         </Scene>
       </Router>
     )
