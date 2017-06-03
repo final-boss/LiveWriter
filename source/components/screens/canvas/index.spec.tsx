@@ -17,13 +17,4 @@ describe(CanvasScreen.name, () => {
     });
   });
 
-  describe('.navigationOptions', () => {
-
-    const navigationOptions = CanvasScreen.navigationOptions;
-
-    it('does not have a header', () => {
-      expect(navigationOptions.header).toBeNull()
-    });
-  });
-
 });
