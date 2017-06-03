@@ -6,10 +6,11 @@ abstract class Paintable {
   offset : Point
   final  : boolean
 
-  static keyCounter : number = 0;
-  static keyError   : string = 'Paint Element already rendered!';
+  static keyCounter   : number = 0;
+  static keyError     : string = 'Paint Element already rendered!';
+  static globalOffset : Point  = Point.default();
 
-  constructor(points = [], offset = Point.default()) {
+  constructor(points = [], offset = Paintable.globalOffset.copy()) {
     this.points = points;
     this.offset = offset;
     this.final  = false;
@@ -19,6 +20,10 @@ abstract class Paintable {
     let nativeEvent = event.nativeEvent;
     let point       = new Point(nativeEvent.pageX, nativeEvent.pageY);
     this.points.push(point);
+  }
+
+  resetOffset() {
+    this.offset = Paintable.globalOffset.copy();
   }
 
   offsetPoints() : Point[] {

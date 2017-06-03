@@ -20,14 +20,33 @@ describe(PaintableSubclass.name, () => {
   });
 
   describe('constructor', () => {
-    let defaultAttributes = {
-      points: [],
-      offset: Point.default(),
-      final:  false
-    };
 
-    it('should have initial attributes', () => {
-      expect(subject).toEqual(defaultAttributes);
+    describe('default attributes', () => {
+      let defaultAttributes = {
+        points: [],
+        offset: Paintable.globalOffset.copy(),
+        final:  false
+      };
+
+      it('should have initial attributes', () => {
+        expect(subject).toEqual(defaultAttributes);
+      });
+    });
+
+    describe('default offset', () => {
+      beforeAll(() => {
+        Paintable.globalOffset = new Point(200, 10);
+        subject = new PaintableSubclass();
+      });
+
+      afterAll(() => {
+        Paintable.globalOffset = Point.default();
+      });
+
+      it('should have copy of global offset point', () => {
+        expect(subject.offset).toEqual(Paintable.globalOffset);
+        expect(subject.offset).not.toBe(Paintable.globalOffset);
+      });
     });
   });
 
@@ -56,6 +75,23 @@ describe(PaintableSubclass.name, () => {
 
     it('should offset points with offset', () => {
       expect(offsetPoints).toEqual(offsets);
+    });
+  });
+
+  describe('#resetOffset', () => {
+
+    beforeAll(() => {
+      Paintable.globalOffset = new Point(100, 40);
+      subject.resetOffset();
+    });
+
+    afterAll(() => {
+      Paintable.globalOffset = Point.default();
+    });
+
+    it('should offset point to copy of current global offset', () => {
+      expect(subject.offset).toEqual(Paintable.globalOffset);
+      expect(subject.offset).not.toBe(Paintable.globalOffset);
     });
   });
 
