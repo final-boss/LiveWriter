@@ -71,9 +71,17 @@ export default class PaintView extends React.Component<Props, State> {
     });
   }
 
+  onLayout(event) {
+    let { x, y } = event.nativeEvent.layout;
+    Paintable.globalOffset = new Point(x, y);
+    this.state.paintable.resetOffset();
+  }
+
   render() {
     return (
-      <View {...this.responder.panHandlers} style={styles.container}>
+      <View {...this.responder.panHandlers}
+            onLayout={this.onLayout.bind(this)}
+            style={styles.container}>
         <Svg style={styles.surface}>
           <G>
             {this.state.paintable.toElement()}
