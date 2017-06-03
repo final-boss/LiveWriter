@@ -15,9 +15,13 @@ class Point {
   }
 
   static fromReactPageEvent(event) : Point {
-    return new Point(
-      event.nativeEvent.pageX, event.nativeEvent.pageY
-    );
+    let { pageX, pageY } = event.nativeEvent;
+    return new Point(pageX, pageY);
+  }
+
+  static fromReactLayoutEvent(event) : Point {
+    let { x, y } = event.nativeEvent.layout;
+    return new Point(x, y);
   }
 
   static origin() : Point {

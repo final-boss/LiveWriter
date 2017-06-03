@@ -21,6 +21,18 @@ describe(Point.name, () => {
     });
   });
 
+  describe('.fromReactLayoutEvent', () => {
+
+    let [x, y]     = [10, 82],
+        eventPoint = new Point(x, y),
+        event      = { nativeEvent: { layout: { x: x, y: y } } };
+
+    it('should return point from event', () => {
+      let point = Point.fromReactLayoutEvent(event);
+      expect(point).toEqual(eventPoint);
+    });
+  });
+
   describe('.origin', () => {
 
     it('should return 0,0', () => {
