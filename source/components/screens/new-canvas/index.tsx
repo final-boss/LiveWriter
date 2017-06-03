@@ -1,7 +1,7 @@
 import {
   Container, Button, Text, Form, Content,
   Label, CheckBox, Header, Body, Item,
-  Input, Right, Left, Icon
+  Input, Title, Right, Left, Icon
 } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import React from 'react';
@@ -45,7 +45,7 @@ export default class NewCanvasScreen extends React.Component<Props, State> {
             </Button>
           </Left>
           <Body>
-            <Text>New Canvas</Text>
+            <Title>New Canvas</Title>
           </Body>
           <Right></Right>
         </Header>

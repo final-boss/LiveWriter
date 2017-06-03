@@ -1,5 +1,5 @@
 import {
-  Container, Header, Body, Text,
+  Container, Header, Body, Title,
   Left, Right, Button, Icon
 } from 'native-base';
 import Canvas from '../../paint-view';
@@ -25,7 +25,7 @@ export default class CanvasScreen extends React.Component<Props, State> {
             </Button>
           </Left>
           <Body>
-            <Text>Canvas</Text>
+            <Title>Canvas</Title>
           </Body>
           <Right>
             <Button transparent>
