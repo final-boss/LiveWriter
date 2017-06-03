@@ -10,6 +10,10 @@ class Point {
     return `${this.x},${this.y}`;
   }
 
+  copy() : Point {
+    return new Point(this.x, this.y);
+  }
+
   static fromReactEvent(event) : Point {
     return new Point(
       event.nativeEvent.pageX, event.nativeEvent.pageY

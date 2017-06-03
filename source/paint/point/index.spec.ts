@@ -73,4 +73,20 @@ describe(Point.name, () => {
     });
   });
 
+  describe('#copy', () => {
+
+    let [x, y] = [79, 23];
+
+    beforeAll(() => {
+      subject.x = x;
+      subject.y = y;
+    });
+
+    it('should return new point', () => {
+      let copy = subject.copy();
+      expect(copy).toEqual(subject);
+      expect(copy).not.toBe(subject);
+    });
+  });
+
 });
